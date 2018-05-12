@@ -24,6 +24,7 @@ import { Identity } from './identity';
 import RestClient from './network/rest/restClient';
 import RpcClient from './network/rpc/rpcClient';
 import { WebsocketClient } from './network/websocket/websocketClient';
+import { Request } from './request';
 import * as scrypt from './scrypt';
 import { SDK } from './sdk/index';
 import AbiFunction from './smartcontract/abi/abiFunction';
@@ -62,6 +63,8 @@ class ONT {
     RpcClient: any;
     WebsocketClient: any;
     Crypto: any;
+    Request: any;
+
     constructor() {
         this.Account = Account;
         this.Identity = Identity;
@@ -86,6 +89,7 @@ class ONT {
         this.RpcClient = RpcClient;
         this.WebsocketClient = WebsocketClient;
         this.Crypto = Crypto;
+        this.Request = Request;
     }
     setNode(url: string) {
         this.CONST.TEST_NODE = url;
@@ -129,5 +133,6 @@ export {
     RestClient,
     RpcClient,
     WebsocketClient,
-    Crypto
+    Crypto,
+    Request
 };
